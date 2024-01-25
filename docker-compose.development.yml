@@ -1,0 +1,19 @@
+version: '3'
+services:
+  shortly_web_development:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    container_name: shortly_web_development
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./.env.development:/usr/src/app/.env.development
+      - ./.eslintrc.cjs:/usr/src/app/.eslintrc.cjs
+      - ./index.html:/usr/src/app/index.html
+      - ./README.md:/usr/src/app/README.md
+      - ./tsconfig.json:/usr/src/app/tsconfig.json
+      - ./tsconfig.node.json:/usr/src/app/tsconfig.node.json
+      - ./vite.config.ts:/usr/src/app/vite.config.ts
+    command: bash -c "npm run dev"
