@@ -156,3 +156,4 @@ dist
 .pnp.*
 
 .husky
+coverage
