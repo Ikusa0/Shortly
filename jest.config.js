@@ -9,6 +9,7 @@ const config = {
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
+    '<rootDir>/tests/e2e/cypress'
   ],
   testEnvironment: 'node',
   transform: {

@@ -4,3 +4,8 @@ coverage
 .husky
 jest.config.js
 vite.config.ts
+cypress.config.ts
+public
+dist
+*.scss
+*.json
