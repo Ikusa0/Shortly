@@ -1,3 +1,4 @@
+import Header from '@/presentation/components/header/header'
 import {
   BrandRecognitionIconSVG,
   DetailedRecordsIconSVG,
@@ -6,7 +7,6 @@ import {
   WorkingIllustrationSVG
 } from '@/presentation/images'
 import React from 'react'
-import { AiOutlineMenu as MenuICON } from 'react-icons/ai'
 import {
   IoLogoFacebook as FacebookICON,
   IoLogoInstagram as InstagramICON,
@@ -18,10 +18,7 @@ import Styles from './landing-styles.module.scss'
 const Landing: React.FC = () => {
   return (
     <>
-      <header>
-        <LogoSVG className={Styles.logo} />
-        <MenuICON className={Styles.icon} />
-      </header>
+      <Header />
       <article className={Styles.landing}>
         <section className={Styles.presentation}>
           <div className={Styles.imageWrapper}>

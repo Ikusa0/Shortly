@@ -9,25 +9,6 @@
   }
 }
 
-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  padding: 1.5rem 1rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: white;
-
-  .icon {
-    font-size: 2rem;
-  }
-}
-
 footer {
   padding: 3rem 0 2rem 0;
   background-color: $very-dark-blue;
