@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev:compose": "docker-compose -f docker-compose.development.yml --env-file .env.development",
-    "dev:docker:up": "npm run dev:compose -- up -d && npm run dev:docker:logs",
+    "dev:docker:up": "npm run dev:compose -- up -d && npm run dev:docker:logs:follow",
     "dev:docker:down": "npm run dev:compose -- down --rmi all",
     "dev:docker:logs": "npm run dev:compose -- logs",
-    "dev:docker:logs:follow": "npm run dev:compose -- logs -f",
+    "dev:docker:logs:follow": "npm run dev:docker:logs -- -f",
     "dev": "NODE_ENV=development vite",
     "test:compose": "docker-compose -f docker-compose.test.yml --env-file .env.test",
     "test:docker:watch": "npm run test:compose -- run --rm shortly_web_test npm run test:watch",
@@ -29,6 +29,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
