@@ -18,6 +18,13 @@
     display: flex;
     gap: 1rem;
 
+    a:hover {
+      .icon * {
+        @include make-darker;
+        color: $cyan;
+      }
+    }
+
     .icon {
       font-size: 2rem;
     }
@@ -61,7 +68,7 @@
       align-items: initial;
       flex-wrap: wrap;
       gap: 4.5rem;
-      
+
       .footerItem {
         flex-basis: fit-content;
       }
