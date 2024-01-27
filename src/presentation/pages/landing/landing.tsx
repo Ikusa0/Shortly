@@ -7,8 +7,8 @@ import {
   IoLogoPinterest as PinterestICON,
   IoLogoTwitter as TwitterICON
 } from 'react-icons/io'
-import GetStartedButton from './components/get-started-button/get-started-button'
 import Presentation from './components/presentation/presentation'
+import SmallPresentation from './components/small-presentation/small-presentation'
 import Statistics from './components/statistics/statistics'
 import UrlShortenerForm from './components/url-shortener-form/url-shortener-form'
 import Styles from './landing-styles.module.scss'
@@ -21,10 +21,7 @@ const Landing: React.FC = () => {
         <Presentation />
         <UrlShortenerForm />
         <Statistics />
-        <section className={Styles.smallPresentation}>
-          <h2>{`Boost your links today`}</h2>
-          <GetStartedButton />
-        </section>
+        <SmallPresentation />
       </article>
       <footer>
         <LogoSVG className={Styles.logo} />

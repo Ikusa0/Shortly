@@ -47,22 +47,4 @@ footer {
   & > section {
     padding: 2rem 1rem;
   }
-
-  .smallPresentation {
-    text-align: center;
-    background-color: $dark-violet;
-    background-image: url('@/presentation/images/bg-boost-mobile.svg');
-    background-repeat: no-repeat;
-    background-position: top right;
-
-    padding: 5rem 0;
-
-    h2 {
-      color: white;
-      font-weight: 700;
-      font-size: 1.5rem;
-      line-height: 2rem;
-      padding-bottom: 1rem;
-    }
-  }
 }
