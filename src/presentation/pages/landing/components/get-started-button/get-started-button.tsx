@@ -1,4 +1,4 @@
-import RoundedButton from '@/presentation/components/rounded-button/rounded-button'
+import { RoundedButton } from '@/presentation/components/'
 import React from 'react'
 import Styles from './get-started-button-styles.module.scss'
 

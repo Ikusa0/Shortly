@@ -1,5 +1,5 @@
+import { GetStartedButton } from '@/presentation/pages/landing/components'
 import React from 'react'
-import GetStartedButton from '../get-started-button/get-started-button'
 import Styles from './small-presentation-styles.module.scss'
 
 const SmallPresentation: React.FC = () => {

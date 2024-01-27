@@ -1,4 +1,4 @@
-import Navigation from '@/presentation/components/navigation/navigation'
+import { Navigation } from '@/presentation/components'
 import { LogoSVG } from '@/presentation/images'
 import React, { useState } from 'react'
 import { AiOutlineMenu as MenuICON } from 'react-icons/ai'

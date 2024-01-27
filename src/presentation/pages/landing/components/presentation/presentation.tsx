@@ -1,6 +1,6 @@
 import { WorkingIllustrationSVG } from '@/presentation/images'
+import { GetStartedButton } from '@/presentation/pages/landing/components'
 import React from 'react'
-import GetStartedButton from '../get-started-button/get-started-button'
 import Styles from './presentation-styles.module.scss'
 
 const Presentation: React.FC = () => {

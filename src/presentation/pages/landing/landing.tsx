@@ -1,10 +1,6 @@
-import Footer from '@/presentation/components/footer/footer'
-import Header from '@/presentation/components/header/header'
+import { Footer, Header } from '@/presentation/components'
 import React from 'react'
-import Presentation from './components/presentation/presentation'
-import SmallPresentation from './components/small-presentation/small-presentation'
-import Statistics from './components/statistics/statistics'
-import UrlShortenerForm from './components/url-shortener-form/url-shortener-form'
+import { Presentation, SmallPresentation, Statistics, UrlShortenerForm } from './components'
 import Styles from './landing-styles.module.scss'
 
 const Landing: React.FC = () => {

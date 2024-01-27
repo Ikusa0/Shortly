@@ -1,0 +1,5 @@
+export { default as GetStartedButton } from './get-started-button/get-started-button'
+export { default as Presentation } from './presentation/presentation'
+export { default as SmallPresentation } from './small-presentation/small-presentation'
+export { default as Statistics } from './statistics/statistics'
+export { default as UrlShortenerForm } from './url-shortener-form/url-shortener-form'

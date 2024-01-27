@@ -1,5 +1,5 @@
+import { RoundedButton } from '@/presentation/components'
 import React from 'react'
-import RoundedButton from '../rounded-button/rounded-button'
 import Styles from './navigation-styles.module.scss'
 
 const Navigation: React.FC = () => {
