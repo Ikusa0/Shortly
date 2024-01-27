@@ -61,10 +61,18 @@ const Footer: React.FC = () => {
           </ul>
         </section>
         <section className={`${Styles.social} ${Styles.footerItem}`}>
-          <FacebookICON className={Styles.icon} />
-          <TwitterICON className={Styles.icon} />
-          <PinterestICON className={Styles.icon} />
-          <InstagramICON className={Styles.icon} />
+          <a href="">
+            <FacebookICON className={Styles.icon} />
+          </a>
+          <a href="">
+            <TwitterICON className={Styles.icon} />
+          </a>
+          <a href="">
+            <PinterestICON className={Styles.icon} />
+          </a>
+          <a href="">
+            <InstagramICON className={Styles.icon} />
+          </a>
         </section>
       </div>
     </footer>
