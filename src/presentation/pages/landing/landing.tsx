@@ -14,6 +14,7 @@ import {
 } from 'react-icons/io'
 import GetStartedButton from './components/get-started-button/get-started-button'
 import Presentation from './components/presentation/presentation'
+import UrlShortenerForm from './components/url-shortener-form/url-shortener-form'
 import Styles from './landing-styles.module.scss'
 
 const Landing: React.FC = () => {
@@ -22,15 +23,7 @@ const Landing: React.FC = () => {
       <Header />
       <article className={Styles.landing}>
         <Presentation />
-        <section className={Styles.urlShortenerForm}>
-          <form action="">
-            <input
-              type="text"
-              placeholder="Shorten a link here..."
-            />
-            <button className={Styles.submitButton}>{`Shorten it!`}</button>
-          </form>
-        </section>
+        <UrlShortenerForm />
         <section className={Styles.statistics}>
           <div className={Styles.textWrapper}>
             <h2>{`Advanced Statistics`}</h2>
