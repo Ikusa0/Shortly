@@ -1,0 +1,11 @@
+@import '@/presentation/styles/global.module.scss';
+
+.roundedButton {
+  width: 100%;
+  font-size: 1.1rem;
+  background-color: $cyan;
+  color: white;
+  border-radius: 2rem;
+  padding: 0.75rem 3.5rem;
+  font-weight: 700;
+}
