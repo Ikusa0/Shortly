@@ -13,3 +13,17 @@
 html {
   font-size: 18px;
 }
+
+button:hover,
+a:hover {
+  @include make-brighter;
+}
+
+:disabled {
+  @include make-gray;
+
+  &:hover {
+    cursor: default;
+    opacity: 1;
+  }
+}

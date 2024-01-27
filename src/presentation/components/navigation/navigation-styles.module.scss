@@ -1,0 +1,41 @@
+@import '@/presentation/styles/global.module.scss';
+
+.navigation {
+  background-color: $dark-violet;
+  position: fixed;
+  top: 5rem;
+  left: 1rem;
+  border-radius: 0.5rem;
+  width: calc(100% - 2rem);
+  padding: 0 1.5rem;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+
+    li {
+      text-align: center;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      font-weight: 700;
+      color: white;
+      background-color: $dark-violet;
+      border-radius: 2rem;
+      padding: 1rem;
+    }
+  }
+
+  .shortcuts {
+    border-bottom: 0.5px solid $grayish-violet;
+  }
+
+  .authentication {
+    gap: 1rem;
+  }
+}
