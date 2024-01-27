@@ -3,4 +3,12 @@
 .getStartedButton {
   padding: 1rem 2.5rem;
   width: fit-content;
+
+  @media screen and (min-width: 768px) {
+    padding: 0.75rem 2.75rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.25rem;
+  }
 }
