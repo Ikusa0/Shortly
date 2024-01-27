@@ -55,7 +55,11 @@
     .imageWrapper {
       width: 50%;
       padding: 0;
-      height: 15rem;
+      height: 18rem;
+
+      .image {
+        transform: scale(1.2) translateX(4.5rem);
+      }
     }
   }
 
