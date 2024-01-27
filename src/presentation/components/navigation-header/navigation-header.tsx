@@ -1,10 +1,10 @@
-import { RoundedButton } from '@/presentation/components'
 import React from 'react'
-import Styles from './navigation-styles.module.scss'
+import { RoundedButton } from '..'
+import Styles from './navigation-header-styles.module.scss'
 
-const Navigation: React.FC = () => {
+const NavigationHeader: React.FC = () => {
   return (
-    <nav className={Styles.navigation}>
+    <nav className={Styles.navigationHeader}>
       <ul className={Styles.shortcuts}>
         <li>
           <a href="#">{`Features`}</a>
@@ -21,11 +21,11 @@ const Navigation: React.FC = () => {
           <a href="#">{`Login`}</a>
         </li>
         <li>
-          <RoundedButton>{`Sign Up`}</RoundedButton>
+          <RoundedButton className={Styles.signUpButton}>{`Sign Up`}</RoundedButton>
         </li>
       </ul>
     </nav>
   )
 }
 
-export default Navigation
+export default NavigationHeader

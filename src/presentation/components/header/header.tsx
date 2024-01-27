@@ -1,7 +1,8 @@
-import { Navigation } from '@/presentation/components'
+import { NavigationPopup } from '@/presentation/components'
 import { LogoSVG } from '@/presentation/images'
 import React, { useState } from 'react'
 import { AiOutlineMenu as MenuICON } from 'react-icons/ai'
+import NavigationHeader from '../navigation-header/navigation-header'
 import Styles from './header-styles.module.scss'
 
 type StateTypes = {
@@ -20,10 +21,14 @@ const Header: React.FC = () => {
   return (
     <header className={Styles.header}>
       <LogoSVG className={Styles.logo} />
-      <button onClick={toggleNavigation}>
+      <button
+        onClick={toggleNavigation}
+        className={Styles.menu}
+      >
         <MenuICON className={Styles.icon} />
       </button>
-      {state.navigation && <Navigation />}
+      {state.navigation && <NavigationPopup />}
+      <NavigationHeader />
     </header>
   )
 }

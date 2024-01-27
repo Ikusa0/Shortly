@@ -1,6 +1,6 @@
 @import '@/presentation/styles/global.module.scss';
 
-.navigation {
+.navigationPopup {
   background-color: $dark-violet;
   position: fixed;
   top: 5rem;
@@ -15,7 +15,8 @@
     flex-direction: column;
     padding: 2rem 0;
 
-    li, a {
+    li,
+    a {
       text-align: center;
       width: 100%;
     }
@@ -36,5 +37,9 @@
 
   .authentication {
     gap: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
   }
 }
