@@ -24,7 +24,22 @@
     }
   }
 
+  .card:not(:first-of-type) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      width: 1rem;
+      height: 5rem;
+      background-color: $cyan;
+    }
+  }
+
   .card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
