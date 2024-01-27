@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '@/presentation/styles/global.module.scss';
 
 .header {
   width: 100%;
@@ -16,8 +16,14 @@
 
   background-color: white;
 
-  .icon {
-    font-size: 2rem;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      font-size: 2rem;
+    }
   }
 
   .logo {
