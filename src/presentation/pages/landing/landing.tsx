@@ -3,8 +3,7 @@ import {
   BrandRecognitionIconSVG,
   DetailedRecordsIconSVG,
   FullyCustomizableIconSVG,
-  LogoSVG,
-  WorkingIllustrationSVG
+  LogoSVG
 } from '@/presentation/images'
 import React from 'react'
 import {
@@ -13,6 +12,8 @@ import {
   IoLogoPinterest as PinterestICON,
   IoLogoTwitter as TwitterICON
 } from 'react-icons/io'
+import GetStartedButton from './components/get-started-button/get-started-button'
+import Presentation from './components/presentation/presentation'
 import Styles from './landing-styles.module.scss'
 
 const Landing: React.FC = () => {
@@ -20,19 +21,7 @@ const Landing: React.FC = () => {
     <>
       <Header />
       <article className={Styles.landing}>
-        <section className={Styles.presentation}>
-          <div className={Styles.imageWrapper}>
-            <WorkingIllustrationSVG className={Styles.image} />
-          </div>
-          <div className={Styles.textWrapper}>
-            <h1>{`More than just shorter links`}</h1>
-            <p>
-              {`Build your brand's recognition and get detailed insights on how your links are
-            performing`}
-            </p>
-            <button className={Styles.getStartedButton}>{`Get Started`}</button>
-          </div>
-        </section>
+        <Presentation />
         <section className={Styles.urlShortenerForm}>
           <form action="">
             <input
@@ -78,7 +67,7 @@ const Landing: React.FC = () => {
         <section className={Styles.pageEnd}>
           <article className={Styles.smallPresentation}>
             <h2>{`Boost your links today`}</h2>
-            <button className={Styles.getStartedButton}>{`Get Started`}</button>
+            <GetStartedButton />
           </article>
           <footer>
             <LogoSVG className={Styles.logo} />
