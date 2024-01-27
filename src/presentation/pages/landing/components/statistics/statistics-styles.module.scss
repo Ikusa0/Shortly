@@ -24,19 +24,6 @@
     }
   }
 
-  .card:not(:first-of-type) {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -100%);
-      width: 1rem;
-      height: 5rem;
-      background-color: $cyan;
-    }
-  }
-
   .card {
     position: relative;
 
@@ -46,6 +33,17 @@
 
     background-color: white;
     border-radius: 0.25rem;
+
+    &:not(:first-of-type)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      width: 1rem;
+      height: 5rem;
+      background-color: $cyan;
+    }
 
     .iconWrapper {
       background-color: $dark-violet;

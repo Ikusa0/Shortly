@@ -2,33 +2,26 @@
 
 .header {
   width: 100%;
-
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
-
   padding: 1.5rem 1rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background-color: white;
 
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-
     .icon {
       font-size: 2rem;
     }
   }
 
-  .logo {
-    * {
-      color: $very-dark-blue;
-    }
+  .logo * {
+    color: $very-dark-blue;
   }
 }
