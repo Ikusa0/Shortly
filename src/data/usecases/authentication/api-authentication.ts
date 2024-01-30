@@ -1,5 +1,5 @@
 import { HTTPStatusCode, type HTTPClient } from '@/data/protocols/http'
-import { UnexpectedError } from '@/domain/errors'
+import { InvalidCredentialsError, UnexpectedError } from '@/domain/errors'
 import { type AccountModel } from '@/domain/models'
 import { type Authentication, type AuthenticationParams } from '@/domain/usecases'
 
@@ -19,6 +19,8 @@ export class APIAuthentication implements Authentication {
     switch (httpResponse.statusCode) {
       case HTTPStatusCode.ok:
         return httpResponse.body!
+      case HTTPStatusCode.unauthorized:
+        throw new InvalidCredentialsError('E-mail e/ou Senha inválidos!')
       default:
         throw new UnexpectedError()
     }
