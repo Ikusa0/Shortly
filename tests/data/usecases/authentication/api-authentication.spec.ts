@@ -1,4 +1,6 @@
+import { HTTPStatusCode } from '@/data/protocols/http'
 import { APIAuthentication } from '@/data/usecases/authentication'
+import { UnexpectedError } from '@/domain/errors'
 import { type AccountModel } from '@/domain/models'
 import { faker } from '@faker-js/faker'
 import { HTTPClientSpy } from '@tests/data/mocks'
@@ -29,5 +31,15 @@ describe('APIAuthentication', () => {
     expect(httpClientSpy.url).toBe(url)
     expect(httpClientSpy.method).toBe('post')
     expect(httpClientSpy.body).toEqual(authenticationParams)
+  })
+
+  test('Should throw UnexpectedError if HTTPClient returns Status Code 500', async () => {
+    const { sut, httpClientSpy } = makeSut()
+    httpClientSpy.response = {
+      statusCode: HTTPStatusCode.serverError
+    }
+
+    const promise = sut.auth(mockAuthenticationParams())
+    await expect(promise).rejects.toThrow(new UnexpectedError())
   })
 })
