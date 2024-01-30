@@ -4,7 +4,7 @@ import { UnexpectedError } from '@/domain/errors'
 import { type AccountModel } from '@/domain/models'
 import { faker } from '@faker-js/faker'
 import { HTTPClientSpy } from '@tests/data/mocks'
-import { mockAuthenticationParams } from '@tests/domain/mocks'
+import { mockAccountModel, mockAuthenticationParams } from '@tests/domain/mocks'
 
 type SutTypes = {
   sut: APIAuthentication
@@ -31,6 +31,19 @@ describe('APIAuthentication', () => {
     expect(httpClientSpy.url).toBe(url)
     expect(httpClientSpy.method).toBe('post')
     expect(httpClientSpy.body).toEqual(authenticationParams)
+  })
+
+  test('Should return an AccountModel if HTTPClient returns Status Code 200', async () => {
+    const { sut, httpClientSpy } = makeSut()
+    const httpResult = mockAccountModel()
+    httpClientSpy.response = {
+      statusCode: HTTPStatusCode.ok,
+      body: httpResult
+    }
+
+    const account = await sut.auth(mockAuthenticationParams())
+
+    expect(account).toEqual(httpResult)
   })
 
   test('Should throw UnexpectedError if HTTPClient returns Status Code 500', async () => {
