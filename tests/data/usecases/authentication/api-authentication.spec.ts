@@ -1,6 +1,6 @@
 import { HTTPStatusCode } from '@/data/protocols/http'
 import { APIAuthentication } from '@/data/usecases/authentication'
-import { UnexpectedError } from '@/domain/errors'
+import { InvalidCredentialsError, UnexpectedError } from '@/domain/errors'
 import { type AccountModel } from '@/domain/models'
 import { faker } from '@faker-js/faker'
 import { HTTPClientSpy } from '@tests/data/mocks'
@@ -46,6 +46,18 @@ describe('APIAuthentication', () => {
     expect(account).toEqual(httpResult)
   })
 
+  test('Should throw InvalidCredentialsError if HTTPClient returns Status Code 401', async () => {
+    const { sut, httpClientSpy } = makeSut()
+    httpClientSpy.response = {
+      statusCode: HTTPStatusCode.unauthorized
+    }
+
+    const promise = sut.auth(mockAuthenticationParams())
+    await expect(promise).rejects.toThrow(
+      new InvalidCredentialsError('E-mail e/ou Senha inválidos!')
+    )
+  })
+
   test('Should throw UnexpectedError if HTTPClient returns Status Code 500', async () => {
     const { sut, httpClientSpy } = makeSut()
     httpClientSpy.response = {
@@ -59,7 +71,7 @@ describe('APIAuthentication', () => {
   test('Should throw UnexpectedError if HTTPClient returns Status Code 404', async () => {
     const { sut, httpClientSpy } = makeSut()
     httpClientSpy.response = {
-      statusCode: HTTPStatusCode.serverError
+      statusCode: HTTPStatusCode.notFound
     }
 
     const promise = sut.auth(mockAuthenticationParams())
@@ -69,7 +81,7 @@ describe('APIAuthentication', () => {
   test('Should throw UnexpectedError if HTTPClient returns Status Code 400', async () => {
     const { sut, httpClientSpy } = makeSut()
     httpClientSpy.response = {
-      statusCode: HTTPStatusCode.serverError
+      statusCode: HTTPStatusCode.badRequest
     }
 
     const promise = sut.auth(mockAuthenticationParams())
