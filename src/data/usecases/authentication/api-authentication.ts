@@ -1,4 +1,5 @@
-import { type HTTPClient } from '@/data/protocols/http'
+import { HTTPStatusCode, type HTTPClient } from '@/data/protocols/http'
+import { UnexpectedError } from '@/domain/errors'
 import { type AccountModel } from '@/domain/models'
 import { type Authentication, type AuthenticationParams } from '@/domain/usecases'
 
@@ -15,6 +16,11 @@ export class APIAuthentication implements Authentication {
       body: params
     })
 
-    return httpResponse.body!
+    switch (httpResponse.statusCode) {
+      case HTTPStatusCode.ok:
+        return httpResponse.body!
+      default:
+        throw new UnexpectedError()
+    }
   }
 }
